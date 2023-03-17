@@ -15,8 +15,14 @@ int main() {
 
 		switch (shapeChoice)
 		{
+		case 2:
+			printf_s("Triangle inside angles slected");
+			double x, y, z;
+			TriangleSides(&x, &y, &z);
+			TriangleInsideAngles(x, y, z);
+			break;
 		case 1:
-			printf_s("Triangle selected.\n");
+			printf_s("Triangle analysis selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
 			//printf_s("! %d\n", triangleSidesPtr[0]);
@@ -43,7 +49,8 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
-	printf_s("1. Triangle\n");
+	printf_s("1. Triangle Analysis\n");
+	printf_s("1. Triangle Inside angles\n");
 	printf_s("0. Exit\n");
 
 	int shapeChoice;
@@ -61,4 +68,9 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+void TriangleSides(double* x, double* y, double* z)
+{
+	printf_s("Enter the three sides of the triangle: \n");
+	scanf_s("%lf %lf %lf", x,y,z);
 }
