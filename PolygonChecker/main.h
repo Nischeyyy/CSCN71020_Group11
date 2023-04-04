@@ -3,3 +3,4 @@
 void printWelcome();
 int printShapeMenu();
 double* getTriangleSides(double* triangleSides);
+void getRectangleCoordinates();

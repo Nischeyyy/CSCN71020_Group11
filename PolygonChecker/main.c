@@ -4,6 +4,7 @@
 
 #include "main.h"
 #include "triangleSolver.h"
+#include "rectangleSolver.h"
 
 int side = 0;
 
@@ -18,6 +19,12 @@ int main() {
         int shapeChoice = printShapeMenu();
         switch (shapeChoice)
         {
+        case 3:
+            printf_s("Rectangle analysis selected.\n");
+            getRectangleCoordinates();
+            analyzeRectangle();
+            
+            break;
         case 2:
             printf_s("Triangle inside angles slected");
             triangleSidesPtr = getTriangleSides(triangleSides);
@@ -56,6 +63,7 @@ void printWelcome() {
 int printShapeMenu() {
     printf_s("1. Triangle Analysis\n");
     printf_s("2. Triangle Inside angles\n");
+    printf_s("3. Rectangle Analysis\n");
     printf_s("0. Exit\n");
 
     int shapeChoice;
@@ -74,4 +82,19 @@ double* getTriangleSides(double* triangleSides) {
         scanf_s("%lf", &triangleSides[i]);
     }
     return triangleSides;
+}
+
+void getRectangleCoordinates() {
+
+    printf("Enter the coordinates of the four points.\n");
+    for (int i = 0; i < NUMBEROFPOINTS; i++) {
+
+        printf("Enter x%d,y%d: ", i + 1, i + 1);
+        if (scanf_s("%lf,%lf", &points[i].x, &points[i].y) == 0) {
+
+            printf("Invalid Input!");
+            exit(1);
+        }
+    }
+
 }
