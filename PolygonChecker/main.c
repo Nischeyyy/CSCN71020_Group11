@@ -9,16 +9,17 @@
 
 int side = 0;
 
-int main() {
+int main() 
+{
     bool continueProgram = true;
     double triangleSides[3] = { 0.0, 0.0, 0.0 };
     double* triangleSidesPtr;
     char result[60] = "";
 
-    while (continueProgram) {
+    while (continueProgram) { //while loop to run the program until the user exits the program
         printWelcome();
         int shapeChoice = printShapeMenu();
-        switch (shapeChoice)
+        switch (shapeChoice) //switch case to select the option that user has inputted
         {
         case 3:
             printf_s("Rectangle analysis selected.\n");
@@ -52,7 +53,8 @@ int main() {
 
 
 
-void printWelcome() {
+void printWelcome() { //Function to print welcome message
+
     printf_s("\n");
     printf_s(" **********************\n");
     printf_s("**     Welcome to     **\n");
@@ -61,7 +63,8 @@ void printWelcome() {
 }
 
 
-int printShapeMenu() {
+int printShapeMenu() { //Function to print Shape Menu to display options
+
     printf_s("1. Triangle Analysis\n");
     printf_s("2. Triangle Inside angles\n");
     printf_s("3. Rectangle Analysis\n");
@@ -79,7 +82,7 @@ int printShapeMenu() {
 }
 
 
-double* getTriangleSides(double* triangleSides) {
+double* getTriangleSides(double* triangleSides) { //Function to get the triangle sides from the user
 
     printf_s("Enter the three sides of the triangle: \n");
     for (int i = 0; i < 3; i++)
@@ -89,7 +92,7 @@ double* getTriangleSides(double* triangleSides) {
     return triangleSides;
 }
 
-void getRectangleCoordinates() {
+void getRectangleCoordinates() { //Function to get Rectangle coordinates from the user
 
     printf("Enter the coordinates of the four points.\n");
     for (int i = 0; i < NUMBEROFPOINTS; i++) {

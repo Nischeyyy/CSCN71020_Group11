@@ -4,12 +4,12 @@
 #define NUMBEROFDIAGONALS 2
 
 
-typedef struct {
+typedef struct { //Making a struct (POINT) for the coordinates of the rectangle
     double x;
     double y;
 } POINT;
 
-POINT points[NUMBEROFPOINTS];
+POINT points[NUMBEROFPOINTS]; //defining 4 points
 
 void analyzeRectangle();
 double sideLength(POINT a, POINT b);
